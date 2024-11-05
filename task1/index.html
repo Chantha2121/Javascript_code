@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .contianer {
+        margin: 200px;
+        background-color: rgb(218, 240, 72);
+        text-align: center;
+        padding: 100px;
+    }
+</style>
+<body>
+    <div class="contianer">
+        <h3>Number to String Converter</h3>
+        <input type="text" name="" placeholder="Enter the Number" id="inputnumber">
+        <input type="button" value="Convert" onclick="convertNumber()">
+        <div id="result"></div>
+    </div>
+    <script>
+        function convertNumber(){
+            const numberInput = document.getElementById('inputnumber').value;
+            const digitToWord = {
+                '0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four',
+                '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine'
+            };
+
+            let result = '';
+            for (let digit of numberInput) {
+                if (digitToWord[digit] !== undefined) {
+                    result += digitToWord[digit];
+                } else {
+                    result = "Invalid input!";
+                    break;
+                }
+            }
+
+            document.getElementById('result').textContent = result;
+        }
+            
+    </script>
+</body>
+</html>
