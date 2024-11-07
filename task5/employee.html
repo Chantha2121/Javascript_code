@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employee Table</h1>
+    <div>
+        <input type="text" name="" id="name" placeholder="Enter name">
+        <input type="text" name="" id="age" placeholder="Enter age">
+        <input type="text" name="" id="city" placeholder="Enter city">
+        <button onclick="addRow()">Add Row</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="employeetable">
+            <tr>
+                <td>chantha</td>
+                <td>18</td>
+                <td>Phnom Penh</td>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>13</td>
+                <td>Kompong speu</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+            function addRow(){
+                const name = document.getElementById("name").value;
+                const age = document.getElementById("age").value;
+                const city = document.getElementById("city").value;
+
+                if(name == "" && age == "" && city == ""){
+                    alert("Please enter the name age and city")
+                }
+
+                const table = document.getElementById("employeetable");
+
+                const newtable = table.insertRow();
+                const cellname = newtable.insertCell(0);
+                const cellage = newtable.insertCell(1);
+                const cellcity = newtable.insertCell(2);
+
+                cellname.textContent = name;
+                cellage.textContent = age;
+                cellcity.textContent = city;
+
+                document.getElementById('name').value = '';
+                document.getElementById('age').value = '';
+                document.getElementById('city').value = '';
+            }
+    </script>
+</body>
+</html>
